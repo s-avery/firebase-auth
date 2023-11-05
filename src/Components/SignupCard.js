@@ -1,11 +1,22 @@
 import { useState, useContext } from "react";
-import { AuthContext } from "../providers/AuthProvider";
+import { auth } from "../Firebase";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 const SignupCard = () => {
 	// !LOGIC
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
-	const { createNewUser } = useContext(AuthContext);
+	// const { createNewUser } = useContext(AuthContext);
+
+	// *Hardcoding create new user
+	const createNewUser = (signupEmail, signupPassword) => {
+		createUserWithEmailAndPassword(auth, signupEmail, signupPassword)
+			// TODO: decide if we really want to do anything here
+			.then((userCredential) => {
+				console.log(userCredential);
+			})
+			.catch((err) => console.error(err));
+	};
 
 	// !RETURN
 	return (
@@ -29,6 +40,7 @@ const SignupCard = () => {
 					onClick={(e) => {
 						e.preventDefault();
 						createNewUser(email, password);
+						alert("new user created");
 					}}
 				>
 					Sign Up
