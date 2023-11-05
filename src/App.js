@@ -9,7 +9,7 @@ const App = () => {
 
 	return (
 		<div className="App">
-			<p>
+			<div>
 				Current user:
 				{user ? (
 					<div>
@@ -22,7 +22,7 @@ const App = () => {
 				) : (
 					"no current user"
 				)}
-			</p>
+			</div>
 
 			<button onClick={logOut}>Log Out</button>
 			<LogInCard />

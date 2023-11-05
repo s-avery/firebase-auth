@@ -5,7 +5,7 @@ const SignupCard = () => {
 	// !LOGIC
 	const [signupEmail, setSignupEmail] = useState("");
 	const [signupPassword, setSignupPassword] = useState("");
-	const { createNewUser } = useContext(AuthContext);
+	const { createNewUser, createNewUserFrench } = useContext(AuthContext);
 
 	// !RETURN
 	return (
@@ -32,6 +32,16 @@ const SignupCard = () => {
 					}}
 				>
 					Sign Up
+				</button>
+
+				<button
+					type="submit"
+					onClick={(e) => {
+						e.preventDefault();
+						createNewUserFrench(signupEmail, signupPassword);
+					}}
+				>
+					Sign Up But French
 				</button>
 			</form>
 		</div>
