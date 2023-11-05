@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import LoginCard from "./Components/LogInCard";
+import LogInCard from "./Components/LogInCard";
 import SignupCard from "./Components/SignupCard";
 import { auth } from "./Firebase";
 import { AuthContext } from "./providers/AuthProvider";
@@ -25,7 +25,7 @@ const App = () => {
 			</p>
 
 			<button onClick={logOut}>Log Out</button>
-			<LoginCard />
+			<LogInCard />
 			<SignupCard />
 		</div>
 	);

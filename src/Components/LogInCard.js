@@ -41,4 +41,4 @@ const LoginCard = () => {
 		</div>
 	);
 };
-export default LoginCard;
+export default LogInCard;
