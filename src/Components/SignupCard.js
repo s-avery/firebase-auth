@@ -1,30 +1,11 @@
-import {
-	useState,
-	// useContext
-} from "react";
-// import { AuthContext } from "../providers/AuthProvider";
-import { auth } from "../Firebase";
-import {
-	createUserWithEmailAndPassword,
-	sendEmailVerification,
-} from "firebase/auth";
+import { useState, useContext } from "react";
+import { AuthContext } from "../providers/AuthProvider";
 
 const SignupCard = () => {
 	// !LOGIC
 	const [signupEmail, setSignupEmail] = useState("");
 	const [signupPassword, setSignupPassword] = useState("");
-	// const { createNewUser } = useContext(AuthContext);
-
-	// *Hardcoding create new user
-	const createNewUser = (signupEmail, signupPassword) => {
-		createUserWithEmailAndPassword(auth, signupEmail, signupPassword)
-			// TODO: decide if we really want to do anything here
-			.then((userCredential) => {
-				console.log(auth.currentUser);
-				sendEmailVerification(auth.currentUser);
-			})
-			.catch((err) => console.error(err));
-	};
+	const { createNewUser } = useContext(AuthContext);
 
 	// !RETURN
 	return (
