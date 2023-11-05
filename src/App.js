@@ -1,9 +1,10 @@
-import LogInCard from "./Components/LogInCard";
+import LoginCard from "./Components/LoginCard";
+
 const App = () => {
 	return (
 		<div className="App">
 			slay
-			<LogInCard />
+			<LoginCard />
 		</div>
 	);
 };

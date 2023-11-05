@@ -1,7 +1,7 @@
 import { useState, useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 
-const LogInCard = () => {
+const LoginCard = () => {
 	// !LOGIC
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -35,4 +35,4 @@ const LogInCard = () => {
 		</div>
 	);
 };
-export default LogInCard;
+export default LoginCard;
