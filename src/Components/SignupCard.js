@@ -1,11 +1,18 @@
-import { useState, useContext } from "react";
+import {
+	useState,
+	// useContext
+} from "react";
+// import { AuthContext } from "../providers/AuthProvider";
 import { auth } from "../Firebase";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import {
+	createUserWithEmailAndPassword,
+	sendEmailVerification,
+} from "firebase/auth";
 
 const SignupCard = () => {
 	// !LOGIC
-	const [email, setEmail] = useState("");
-	const [password, setPassword] = useState("");
+	const [signupEmail, setSignupEmail] = useState("");
+	const [signupPassword, setSignupPassword] = useState("");
 	// const { createNewUser } = useContext(AuthContext);
 
 	// *Hardcoding create new user
@@ -13,7 +20,8 @@ const SignupCard = () => {
 		createUserWithEmailAndPassword(auth, signupEmail, signupPassword)
 			// TODO: decide if we really want to do anything here
 			.then((userCredential) => {
-				console.log(userCredential);
+				console.log(auth.currentUser);
+				sendEmailVerification(auth.currentUser);
 			})
 			.catch((err) => console.error(err));
 	};
@@ -26,21 +34,20 @@ const SignupCard = () => {
 				<input
 					type="email"
 					placeholder="Enter your email"
-					value={email}
-					onChange={(e) => setEmail(e.target.value)}
+					value={signupEmail}
+					onChange={(e) => setSignupEmail(e.target.value)}
 				></input>
 				<input
 					type="password"
 					placeholder="Enter your password"
-					value={password}
-					onChange={(e) => setPassword(e.target.value)}
+					value={signupPassword}
+					onChange={(e) => setSignupPassword(e.target.value)}
 				></input>
 				<button
 					type="submit"
 					onClick={(e) => {
 						e.preventDefault();
-						createNewUser(email, password);
-						alert("new user created");
+						createNewUser(signupEmail, signupPassword);
 					}}
 				>
 					Sign Up
