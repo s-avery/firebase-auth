@@ -3,6 +3,7 @@ import {
 	createUserWithEmailAndPassword,
 	signOut,
 	onAuthStateChanged,
+	sendEmailVerification,
 } from "firebase/auth";
 import { useState, createContext, useEffect } from "react";
 import { auth } from "../Firebase";
@@ -52,6 +53,7 @@ const AuthProvider = ({ children }) => {
 			// TODO: decide if we really want to do anything here
 			.then((userCredential) => {
 				console.log(userCredential);
+				sendEmailVerification(auth.currentUser);
 			})
 			.catch((err) => console.error(err));
 	};
