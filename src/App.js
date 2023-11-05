@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import LoginCard from "./Components/LoginCard";
+import LoginCard from "./Components/LogInCard";
 import SignupCard from "./Components/SignupCard";
 import { auth } from "./Firebase";
 import { AuthContext } from "./providers/AuthProvider";
