@@ -52,10 +52,8 @@ const AuthProvider = ({ children }) => {
 			// TODO: decide if we really want to do anything here
 			.then((userCredential) => {
 				console.log(userCredential);
-				
 			})
 			.catch((err) => console.error(err));
-
 	};
 
 	return (

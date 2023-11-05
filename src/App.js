@@ -5,12 +5,13 @@ import { auth } from "./Firebase";
 import { AuthContext } from "./providers/AuthProvider";
 
 const App = () => {
-	const { user } = useContext(AuthContext);
+	const { user, logOut } = useContext(AuthContext);
 
 	return (
 		<div className="App">
 			Current user:
 			{user ? "yes logged in" : "no logged out"}
+			<button onClick={logOut}>Log Out</button>
 			<LoginCard />
 			<SignupCard />
 		</div>
