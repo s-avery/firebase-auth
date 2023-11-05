@@ -1,9 +1,9 @@
-import SignIn from "./Components/SignIn";
+import LogInCard from "./Components/LogInCard";
 const App = () => {
 	return (
 		<div className="App">
 			slay
-			<SignIn />
+			<LogInCard />
 		</div>
 	);
 };

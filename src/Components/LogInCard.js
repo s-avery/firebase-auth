@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 
-const SignIn = () => {
+const LogInCard = () => {
 	// !LOGIC
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -11,7 +11,7 @@ const SignIn = () => {
 	return (
 		<div>
 			<form onSubmit={logIn}>
-				<h1>Sign In</h1>
+				<h1>Log In</h1>
 				<input
 					type="email"
 					name=""
@@ -22,14 +22,17 @@ const SignIn = () => {
 						setEmail(e.target.value);
 					}}
 				/>
+
 				<input
 					type="password"
 					placeholder="Enter your password"
 					value={password}
 					onChange={(e) => setPassword(e.target.value)}
 				></input>
+
+				<button type="submit">Log In</button>
 			</form>
 		</div>
 	);
 };
-export default SignIn;
+export default LogInCard;
