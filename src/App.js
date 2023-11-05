@@ -10,7 +10,7 @@ const App = () => {
 	return (
 		<div className="App">
 			Current user:
-			{user}
+			{user ? "yes logged in" : "no logged out"}
 			<LoginCard />
 			<SignupCard />
 		</div>
