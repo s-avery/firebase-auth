@@ -102,7 +102,14 @@ const AuthProvider = ({ children }) => {
 	return (
 		// passing down our relevant state and associated functions in an anonymous object that children can pull from as needed using useContext
 		<AuthContext.Provider
-			value={{ user, logIn, logOut, createNewUser, createNewUserFrench }}
+			value={{
+				user,
+				logIn,
+				logOut,
+				createNewUser,
+				createNewUserFrench,
+				createNewUserWithEmailAuth,
+			}}
 		>
 			{children}
 		</AuthContext.Provider>
