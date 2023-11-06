@@ -3,6 +3,7 @@ import LogInCard from "./Components/LogInCard";
 import SignupCard from "./Components/SignupCard";
 import { auth } from "./Firebase";
 import { AuthContext } from "./providers/AuthProvider";
+import EmailAuthCard from "./Components/EmailAuthCard";
 
 const App = () => {
 	const { user, logOut } = useContext(AuthContext);
@@ -27,6 +28,7 @@ const App = () => {
 			<button onClick={logOut}>Log Out</button>
 			<LogInCard />
 			<SignupCard />
+			<EmailAuthCard />
 		</div>
 	);
 };

@@ -10,7 +10,6 @@ const LogInCard = () => {
 	// !RETURN
 	return (
 		<div>
-			{/* change */}
 			<form
 				onSubmit={(e) => {
 					e.preventDefault();
